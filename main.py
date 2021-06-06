@@ -19,3 +19,24 @@ def save_user(users):
     results = json.dumps(users_list)
     f.write(results)
     return f.close()
+
+users = []
+#female
+
+idx = 0
+while idx <10:
+    response = requests.get('https://randomuser.me/api/')
+    if response.status_code == 200:
+
+        data = response.json()
+        gender = data["results"][0]["gender"] 
+        print(gender)
+        user = get_user(data)
+        if gender =='female':
+            users.append(user)
+            idx +=1
+
+# pprint(users)
+save_user(users)
+
+# user =
