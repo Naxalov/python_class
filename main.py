@@ -21,7 +21,6 @@ def save_user(users):
     return f.close()
 
 users = []
-#female
 
 idx = 0
 while idx <10:
@@ -36,7 +35,4 @@ while idx <10:
             users.append(user)
             idx +=1
 
-# pprint(users)
 save_user(users)
-
-# user =
