@@ -3,6 +3,10 @@ import json
 from pprint import pprint
 count = 5
 URL = 'https://randomuser.me/api'
-response = requests.get(f'{URL}?results={count}')
+param = {
+    'results':2,
+    'gender':'female'
+}
+response = requests.get(url=URL,params=param)
 data = response.json()
-print(len(data['results']))
+pprint(data['results'])
